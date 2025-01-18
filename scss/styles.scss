@@ -1,0 +1,263 @@
+@use 'variables' as * ;
+@use 'mixins' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    img {
+        width: 100%;
+        max-width: min-content;
+
+    }
+
+    button {
+        background-color: $primario;
+        padding: $padding;
+        color: $claro;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: $padding;
+        transition: padding 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+    }
+
+    button:hover {
+        padding: $paddingt;
+        background-color: $oscuro;
+        color: $secundario;
+    }
+
+    span {
+        color: $primario;
+    }
+
+    header {
+        background-color: $primario;
+
+        div {
+            align-items: center;
+            text-align: center;
+
+            img {
+                margin: 0 auto;
+                padding: $padding;
+                cursor: pointer;
+            }
+    
+            ul {
+                grid-column: 3;
+                color: $claro;
+                display: grid;
+                grid-template-columns: repeat(
+                    auto-fit,
+                    minmax(100px, 1fr)
+                );
+    
+                li {
+                    width: 100%;
+                    align-self: center;
+                    justify-self: center;
+                    cursor: pointer;
+                    padding: $padding;
+                    transition: background-color 0.5s ease, color 0.5s ease;
+                }
+    
+                li:hover {
+                    background-color: $oscuro;
+                    color: $secundario;
+                }
+            }
+    
+            @include escritorio() {
+                display: grid;
+                grid-template-columns: 30% auto 30%;
+            }
+        }
+    }
+
+    main {
+        padding: $padding;
+
+        h1 {
+            padding: $padding;
+        }
+
+        h2 {
+            padding: $padding;
+        }
+
+        h3 {
+            padding: $padding;
+        }
+
+        p {
+            padding: $padding;
+        }
+
+        .sobrens {
+            display: grid;
+            grid-template-rows: repeat(3, auto);
+
+            @include escritorio() {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, auto);
+            }
+
+            img {
+                justify-self: center;
+                align-self: center;
+                grid-row: 2;
+
+                @include escritorio() {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 3;
+                }
+            }
+
+            h1 {
+                @include escritorio() {
+                    align-content: end;
+                }
+            }
+
+            p {
+                @include escritorio() {
+                    grid-column: 2 / 3;
+                }
+            }
+        }
+
+        .alaventa {
+            margin: $padding 0px $padding 0px;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+
+            @include escritorio() {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            h1 {
+                grid-column: 1 / 3;
+            }
+
+            article {
+                display: grid;
+                border: solid $gris 2px;
+                box-shadow: 2px 2px $gris;
+                
+                img {
+                    align-self: center;
+                    justify-self: center;
+                }
+            }
+
+            .destacada {
+                grid-column: 1 / 3;
+
+                div {
+                    justify-self: center;
+                    align-content: center;
+                    display: grid;
+                }
+                
+                @include tablet() {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+
+    }
+
+    footer {
+        background-color: $primario;
+        color: $claro;
+
+        h2 {
+            padding: $padding;
+        }
+
+        section {
+
+            article {
+                padding: $padding;
+            }
+        }
+
+        .cositas {
+
+            @include escritorio() {
+                display: grid;
+                grid-template-columns: 30% 20% calc(2*1fr);
+            }
+        }
+
+        .nosotros p {
+            padding: $padding;
+        }
+
+        .naveg {
+
+            ul 
+            {
+                li {
+                    cursor: pointer;
+                    padding: $padding;
+                    transition: padding 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+                }
+    
+                li:hover {
+                    padding: $paddingt;
+                    background-color: $oscuro;
+                    color: $secundario;
+                }
+            }
+        }
+
+        .casasft {
+
+            ul {
+                display: grid;
+                grid-template-columns: repeat(
+                    auto-fit,
+                    minmax(200px, 1fr)
+                );
+
+                li {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    padding: $padding 0rem;
+
+                    div {
+                        display: grid;
+                        align-items: center;
+
+                        p {
+                            padding-left: $padding;
+                        }
+                    }
+                }
+            }
+        }
+
+        .drch {
+            background-color: $oscuro;
+
+            p {
+                padding: $padding;
+                text-align: center;
+            }
+        }
+    }
+}

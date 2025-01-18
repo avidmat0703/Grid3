@@ -1,0 +1,15 @@
+@use 'variables' as * ;
+
+
+/** Media Queries **/
+@mixin tablet {
+    @media only screen and (min-width: $q1) {
+        @content;
+    }
+}
+
+@mixin escritorio {
+    @media only screen and (min-width: $q2) {
+        @content;
+    }
+}
